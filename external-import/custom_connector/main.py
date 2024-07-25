@@ -19,9 +19,6 @@ class CustomConnector(ExternalImportConnector):
             else {}
         )
         self.helper = OpenCTIConnectorHelper(config)
-        self.custom_attribute = get_config_variable(
-            "TEMPLATE_ATTRIBUTE", ["template", "attribute"], config
-        )
         self.interval = '10s'
     
     
