@@ -1,0 +1,24 @@
+version: '3'
+services:
+  connector:
+    build: .
+    container_name: connector
+    environment:
+      # Connector's definition parameters:
+      - CONNECTOR_NAME=custom_connector
+      - CONNECTOR_SCOPE=stix2
+      # Connector's generic execution parameters:
+      - OPENCTI_URL=http://localhost
+      - OPENCTI_TOKEN=e801b101-ef00-4e24-9593-1d32911bace9
+      - CONNECTOR_ID=2f3558fc-6eb7-413f-9ae0-5cab8a38cbab
+      - CONNECTOR_CONFIDENCE_LEVEL=100 # From 0 (Unknown) to 100 (Fully trusted).
+      - CONNECTOR_LOG_LEVEL=info
+      - CONNECTOR_RUN_EVERY=60s
+      # Connector's custom execution parameters:
+      - EXTRA_PARAMETER=foobar
+    restart: always
+
+networks:
+  default:
+    external: true
+    name: docker_default

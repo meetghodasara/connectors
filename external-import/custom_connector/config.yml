@@ -1,0 +1,15 @@
+opencti:
+  url: "http://localhost:8080"
+  token: e801b101-ef00-4e24-9593-1d32911bace9
+
+
+connector:
+  id: 2f3558fc-6eb7-413f-9ae0-5cab8a38cbab
+  type: 'EXTERNAL_IMPORT'
+  name: 'Common Vulnerabilities and Exposures'
+  scope: 'identity,vulnerability'
+  run_and_terminate: false
+  log_level: 'info'
+
+custom_connector:
+    url: https://github.com/OpenCTI-Platform/connectors
